@@ -13,9 +13,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+    <h1>Fill out the form!</h1>
 
     <div class="container">
-        {{ form }}
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="Submit" class="btn btn-primary" value="Submit">
+        </form>
     </div>
 
 </body>
